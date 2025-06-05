@@ -57,13 +57,23 @@ huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --include "origin
 
   model_id = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 
-  pipeline = transformers.pipeline(
-    "text-generation",
-    model="meta-llama/Meta-Llama-3.1-8B-Instruct",
-    model_kwargs={"torch_dtype": torch.bfloat16},
-    device="cuda",
-  )
+    pipeline = transformers.pipeline(
+      "text-generation",
+      model="meta-llama/Meta-Llama-3.1-8B-Instruct",
+      model_kwargs={"torch_dtype": torch.bfloat16},
+      device="cuda",
+    )
   ```
+
+### Ejemplo de predicción de ceros
+
+El script `zero_transformer.py` muestra cómo entrenar un pequeño Transformer con
+secuencias binarias para aprender la distribución de los ceros y predecir nuevas
+apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
+
+```bash
+python zero_transformer.py
+```
 
 ## Responsible Use
 
