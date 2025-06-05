@@ -75,6 +75,18 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Análisis de materia oscura y ceros de Riemann
+
+El script `dark_matter_riemann_analysis.py` combina datos simulados de materia
+oscura con los primeros ceros de Riemann para buscar correlaciones simples.
+Genera una señal ficticia de conteos de materia oscura y calcula la
+correlación cruzada con las partes imaginarias de los ceros. Puedes ejecutarlo
+con:
+
+```bash
+python dark_matter_riemann_analysis.py -n 20
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
