@@ -66,14 +66,22 @@ huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --include "origin
   ```
 
 ### Ejemplo de predicción de ceros
-
-El script `zero_transformer.py` muestra cómo entrenar un pequeño Transformer con
-secuencias binarias para aprender la distribución de los ceros y predecir nuevas
+El script `zero_transformer.py` muestra c\u00f3mo entrenar un peque\u00f1o Transformer con
+secuencias binarias para aprender la distribuci\u00f3n de los ceros y predecir nuevas
 apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 
 ```bash
 python zero_transformer.py
 ```
+
+### Ejemplo de red neuronal autoreescribible
+
+El archivo `self_improving_nn.py` muestra un ejemplo sencillo de c\u00f3mo un script puede ajustar sus propios hiperpar\u00e1metros cuando la precisi\u00f3n no alcanza el umbral deseado.
+
+```bash
+python self_improving_nn.py
+```
+
 
 ## Responsible Use
 
