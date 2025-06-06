@@ -75,6 +75,17 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Ejemplo de red neuronal autoevolutiva
+
+El script `self_evolving_nn.py` implementa una red neuronal capaz de
+reescribirse cuando su exactitud no alcanza un umbral predefinido. Tras cada
+ejecución, la red registra su versión y la motivación de cualquier cambio en el
+archivo `evolution.log`. Para ejecutarlo simplemente corre:
+
+```bash
+python self_evolving_nn.py
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
