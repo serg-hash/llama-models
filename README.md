@@ -75,6 +75,17 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Ejemplo de evolución genética
+
+El script `genetic_self_improving.py` muestra cómo simular un algoritmo genético
+para optimizar una pequeña red neuronal. Cada generación se conserva el modelo
+más preciso y se producen mutaciones que generan nuevas variantes. Para ejecutar
+la demostración solo necesitas `numpy` instalado y luego lanzar
+
+```bash
+python genetic_self_improving.py
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
