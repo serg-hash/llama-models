@@ -75,6 +75,17 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Ejemplo de autoevolución
+
+El script `self_evolving_agent.py` muestra un agente que modifica su
+arquitectura de red cuando el rendimiento es insuficiente. Cada cambio
+queda registrado en un fichero de historial para mantener la continuidad
+entre ejecuciones.
+
+```bash
+python self_evolving_agent.py
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
