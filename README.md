@@ -75,6 +75,17 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Self-evolving agent demo
+
+El script `self_evolving_agent.py` muestra un ejemplo simplificado de red
+neuronal que se autoadapta cuando su precisión no alcanza el umbral deseado.
+Al ejecutarlo, múltiples agentes colaboran compartiendo la misma configuración y
+registran en `evolution.log` las razones de cada cambio.
+
+```bash
+python self_evolving_agent.py
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
