@@ -75,6 +75,17 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Ejemplo de automejora
+
+El script `self_rewriting_nn.py` es una demostración experimental de una
+red neuronal mínima que puede reescribirse a sí misma cuando el error de
+entrenamiento supera un umbral. Tras evaluar la pérdida, incrementa la
+dimensión oculta y registra una nueva versión de su código.
+
+```bash
+python self_rewriting_nn.py
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
