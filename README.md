@@ -75,6 +75,18 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Ejemplo de auto‑mejora
+
+El script `self_evolving_nn.py` ilustra una red neuronal que ajusta sus
+parámetros de manera automática cuando el rendimiento no alcanza un
+umbral mínimo. Tras cada ejecución fallida, la configuración se
+modifica y el programa se relanza para intentar mejorar. Para probarlo
+ejecuta:
+
+```bash
+python self_evolving_nn.py
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
