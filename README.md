@@ -75,6 +75,17 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Red neuronal autoreescribible
+
+El script `self_evolving_network.py` es un ejemplo experimental de una red que,
+si el entrenamiento no alcanza una pérdida aceptable, modifica su propio código
+para aumentar la dimensión de la capa oculta y reintentarlo en la siguiente
+ejecución. Para probarlo basta con ejecutar
+
+```bash
+python self_evolving_network.py
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
