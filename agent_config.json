@@ -1,0 +1,6 @@
+{
+  "embed_dim": 16,
+  "num_layers": 1,
+  "threshold": 0.1,
+  "run_id": 0
+}
