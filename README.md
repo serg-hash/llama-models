@@ -91,3 +91,7 @@ Please report any software “bug” or other problems with the models through o
 ## Questions
 
 For common questions, the FAQ can be found [here](https://llama.meta.com/faq), which will be updated over time as new questions arise.
+
+### Self-evolving Riemann agent
+
+An experimental script `self_evolving_agent.py` demonstrates a toy self-improving neural network. It trains on the first few zeros of the Riemann zeta function and modifies its configuration in `agent_config.json` whenever the training loss exceeds a threshold. Each run is recorded in `agent_history.log`.
