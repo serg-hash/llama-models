@@ -75,6 +75,18 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Auto-modifying neural network demo
+
+El script `self_modifying_nn.py` intenta predecir las partes imaginarias de los
+primeros ceros no triviales de la función zeta de Riemann. Si la pérdida supera
+un umbral, el propio archivo se reescribe aumentando la capacidad de la red y
+disminuyendo la tasa de aprendizaje. Cada modificación queda registrada en el
+archivo `evo_log.txt`.
+
+```bash
+python self_modifying_nn.py
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
