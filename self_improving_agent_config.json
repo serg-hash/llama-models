@@ -1,0 +1,7 @@
+{
+  "hidden_dim": 32,
+  "num_layers": 1,
+  "threshold": 0.1,
+  "version": 1,
+  "history": []
+}
