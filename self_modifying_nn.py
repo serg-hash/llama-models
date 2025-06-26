@@ -14,12 +14,14 @@ import torch
 from torch import nn
 
 CONFIG_FILE = Path("self_net_config.json")
+HISTORY_FILE = Path("self_net_history.log")
 DEFAULT_CONFIG = {
     "input_dim": 2,
     "hidden_dim": 4,
     "learning_rate": 0.1,
     "version": 1,
     "accuracy": 0.0,
+    "name": "SelfModNet",
 }
 
 
@@ -33,6 +35,12 @@ def load_config():
 def save_config(config):
     with open(CONFIG_FILE, "w", encoding="utf-8") as f:
         json.dump(config, f, indent=2)
+
+
+def log_history(message: str) -> None:
+    """Append a message to the history log."""
+    with open(HISTORY_FILE, "a", encoding="utf-8") as f:
+        f.write(message + "\n")
 
 
 class Net(nn.Module):
@@ -89,13 +97,14 @@ def rewrite_self(config):
         else:
             new_lines.append(line)
     this_file.write_text("\n".join(new_lines))
+    log_history(f"Updated source to version {config['version']}")
 
 
 def main():
     config = load_config()
+    print(f"Hello, I am {config['name']} version {config['version']}")
     print(
-        f"Running version {config['version']} with hidden_dim="
-        f"{config['hidden_dim']} and lr={config['learning_rate']}"
+        f"Running with hidden_dim={config['hidden_dim']} and lr={config['learning_rate']}"
     )
     accuracy = train_model(config)
     print(f"Accuracy: {accuracy:.2f}")
@@ -109,10 +118,17 @@ def main():
         )
         save_config(config)
         rewrite_self(config)
+        log_history(
+            f"Version {config['version']} - accuracy {accuracy:.2f} did not improve; "
+            f"increasing hidden_dim and reducing learning rate."
+        )
     else:
         config["accuracy"] = accuracy
         save_config(config)
         print("Configuration updated with improved accuracy")
+        log_history(
+            f"Version {config['version']} achieved improved accuracy {accuracy:.2f}"
+        )
 
 
 if __name__ == "__main__":
