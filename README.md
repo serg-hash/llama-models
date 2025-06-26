@@ -91,3 +91,9 @@ Please report any software “bug” or other problems with the models through o
 ## Questions
 
 For common questions, the FAQ can be found [here](https://llama.meta.com/faq), which will be updated over time as new questions arise.
+
+## Self-improving network demo
+
+The repository now includes `self_improving_network.py`, a small experiment that illustrates an autonomous agent updating its own configuration based on performance. Each run trains a tiny Transformer model on random binary sequences. If the training loss exceeds a threshold, the script increases the model dimension and number of layers and records the change in `evolve.log`.
+
+This demonstration does not solve the Riemann Hypothesis, but showcases how a learning system might adapt when it fails to reach a target performance.
