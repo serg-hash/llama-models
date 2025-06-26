@@ -75,6 +75,17 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Demo de automejora
+
+El script `self_improving_nn.py` ilustra una red neuronal que ajusta su
+arquitectura cuando la precisión baja de 0.9. Guarda su configuración e historial
+en `self_improving_state.json`, permitiendo continuidad entre ejecuciones.
+No resuelve la Hipótesis de Riemann; es solo un ejemplo educativo.
+
+```bash
+python self_improving_nn.py
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
