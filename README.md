@@ -91,3 +91,9 @@ Please report any software “bug” or other problems with the models through o
 ## Questions
 
 For common questions, the FAQ can be found [here](https://llama.meta.com/faq), which will be updated over time as new questions arise.
+
+## Self-improving network demo
+
+The repository now includes `self_improving_network.py`, an experiment showcasing a minimal agent that modifies its own configuration after unsuccessful training. Each run trains a small Transformer on random data. When the loss remains high, the agent doubles the embedding size, adds a layer, and logs a short justification in `evolve.log`.
+
+The script also performs a light numerical check of the first few zeros of the Riemann zeta function. It reports whether these zeros lie on the critical line—illustrating how the agent can run arbitrary computations between training cycles. This check is not a proof of the Riemann Hypothesis; it merely demonstrates a self-improving loop with traceable reasoning.
