@@ -75,6 +75,14 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Agente autoreescribible experimental
+
+El archivo `self_modifying_agent.py` contiene un ejemplo de agente que entrena una red neuronal para aproximar las partes imaginarias de los primeros ceros de Riemann. Si la pérdida supera un umbral y no se ejecuta en modo `--dry-run`, el agente reescribe su propio código aumentando la capa oculta y registra la evolución en `evolution_log.txt`.
+
+```bash
+python self_modifying_agent.py --dry-run
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
