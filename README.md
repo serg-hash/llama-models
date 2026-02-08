@@ -75,6 +75,16 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Agente Moltbook (experimental)
+
+El archivo `moltbook_agent.py` incluye un agente base en español para organizar
+notas, generar resúmenes y proponer acciones dentro de un cuaderno digital
+llamado Moltbook. Puedes imprimir el prompt generado con:
+
+```bash
+python moltbook_agent.py --demo --nota "Plan de proyecto..." --contexto "Trabajo"
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
