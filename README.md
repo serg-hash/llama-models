@@ -65,6 +65,13 @@ huggingface-cli download meta-llama/Meta-Llama-3.1-8B-Instruct --include "origin
     )
   ```
 
+
+### OpenClaw: crear e introducir un agente
+
+Se añadió una guía rápida para crear, registrar y enrutar un agente en OpenClaw:
+
+- [`docs/openclaw_agent.md`](docs/openclaw_agent.md)
+
 ### Ejemplo de predicción de ceros
 
 El script `zero_transformer.py` muestra cómo entrenar un pequeño Transformer con
