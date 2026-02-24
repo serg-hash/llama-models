@@ -75,6 +75,21 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+### Agente para OpenClaw
+
+Se incluye el script `openclaw_agent.py` para levantar un asistente en terminal
+especializado en OpenClaw usando un modelo instruct en Transformers.
+
+```bash
+python openclaw_agent.py --model-id meta-llama/Meta-Llama-3.1-8B-Instruct
+```
+
+Requisitos mínimos:
+
+```bash
+pip install transformers torch
+```
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
