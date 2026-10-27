@@ -1,3 +1,4 @@
 import NavierStokesLab.Equations
 import NavierStokesLab.Leray
+import NavierStokesLab.Energy
 import NavierStokesLab.Clay

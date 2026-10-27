@@ -61,6 +61,16 @@ def kinetic_energy_exact(nu: float, t: float) -> float:
     return 0.25 * float(np.exp(-4.0 * nu * t))
 
 
+def energy_time_derivative_exact(nu: float, t: float) -> float:
+    """d/dt of the Taylor–Green kinetic energy: −ν exp(−4 ν t)."""
+    return -float(nu) * float(np.exp(-4.0 * nu * t))
+
+
+def mean_square_vorticity(omega: np.ndarray) -> float:
+    """Mean of ω². For 2D periodic incompressible flow this equals ⟨|∇u|²⟩."""
+    return float(np.mean(omega * omega))
+
+
 def enstrophy_density(omega: np.ndarray) -> float:
     """Enstrofía media (1/2) ⟨ω²⟩."""
     return 0.5 * float(np.mean(omega * omega))

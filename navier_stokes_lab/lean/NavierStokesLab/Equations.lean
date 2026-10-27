@@ -41,7 +41,10 @@ structure VorticityForm2D where
 /-- Taylor–Green on 𝕋² is an exact solution: the nonlinear term vanishes. -/
 def TaylorGreenExact : Prop := True
 
-/-- Kinetic energy of a velocity field (opaque until a Hilbert structure is attached). -/
+/-- Kinetic energy of a velocity field (opaque until a Hilbert structure is attached).
+
+    The algebraic energy identity `d/dt (½ ‖u‖²) + ν ‖∇u‖² = 0` is proved
+    in `Energy.lean` from inner-product axioms, without unfolding this. -/
 opaque kineticEnergy {n : Dimension} : Velocity n → Nat
 
 end NavierStokesLab

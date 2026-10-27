@@ -8,8 +8,9 @@ No resuelve el problema del milenio de Clay. El objetivo es tener:
 
 1. Un **solver espectral 2D** con una solución exacta (Taylor–Green) contra la
    que medir error.
-2. Un **esqueleto Lean 4** con el enunciado de Clay y las identidades
-   algebraicas del proyector de Leray (el mismo objeto que usa el solver).
+2. Un **esqueleto Lean 4** con el enunciado de Clay, las identidades
+   algebraicas del proyector de Leray y el balance de energía
+   `d/dt (½ ‖u‖²) + ν ‖∇u‖² = 0` (el mismo objeto que usa el solver).
 3. Un **prompt** para continuar las pruebas formales con Codex / Cursor.
 
 ## Python
@@ -45,8 +46,9 @@ lake build
 ```
 
 Toolchain: `leanprover/lean4:v4.22.0` (sin Mathlib). Los lemas de
-`NavierStokesLab/Leray.lean` son identidades en `Int` y deben cerrar con
-`grind`. `Clay.lean` registra la conjetura como `Prop`, no como teorema.
+`NavierStokesLab/Leray.lean` y `NavierStokesLab/Energy.lean` son
+identidades en `Int` y deben cerrar con `grind`. `Clay.lean` registra
+la conjetura como `Prop`, no como teorema.
 
 Siguiente paso formal: `prompts/siguiente_lema.md`.
 

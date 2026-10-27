@@ -79,7 +79,7 @@ python zero_transformer.py
 
 El directorio `navier_stokes_lab/` es un laboratorio 2D de Navier–Stokes
 incompresible (solver espectral + Taylor–Green) con un esqueleto Lean 4 del
-enunciado de Clay y del proyector de Leray.
+enunciado de Clay, del proyector de Leray y de la identidad de energía.
 
 ```bash
 python navier_stokes_explorer.py --steps 40

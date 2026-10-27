@@ -17,12 +17,15 @@ from navier_stokes_lab.projector import (
     leray_numerator,
     leray_numerator_divergence,
     leray_project,
+    mean_square_gradient,
     spectral_divergence,
 )
 from navier_stokes_lab.solver import SpectralNS2D, simulate_taylor_green
 from navier_stokes_lab.taylor_green import (
+    energy_time_derivative_exact,
     kinetic_energy_density,
     kinetic_energy_exact,
+    mean_square_vorticity,
     taylor_green_fields,
     taylor_green_vorticity,
 )
@@ -66,6 +69,22 @@ class TestTaylorGreen(unittest.TestCase):
         self.assertAlmostEqual(
             kinetic_energy_density(u, v), kinetic_energy_exact(0.05, 0.2), places=10
         )
+
+    def test_formal_energy_identity(self):
+        """Numerical counterpart of `lean/NavierStokesLab/Energy.lean`.
+
+        For Taylor–Green, d/dt (½ ‖u‖²) + ν ‖∇u‖² = 0, and in 2D
+        periodic incompressible flow ‖∇u‖² = ‖ω‖².
+        """
+        nu, t, n_grid = 0.05, 0.2, 48
+        u, v = taylor_green_fields(n_grid, nu=nu, t=t)
+        omega = taylor_green_vorticity(n_grid, nu=nu, t=t)
+        dE_dt = energy_time_derivative_exact(nu, t)
+        grad_sq = mean_square_gradient(u, v)
+        omega_sq = mean_square_vorticity(omega)
+        self.assertAlmostEqual(grad_sq, omega_sq, places=10)
+        self.assertAlmostEqual(dE_dt + nu * grad_sq, 0.0, places=10)
+        self.assertAlmostEqual(dE_dt, -4.0 * nu * kinetic_energy_exact(nu, t), places=12)
 
     def test_vorticity_matches_curl(self):
         n_grid = 32
