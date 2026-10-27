@@ -75,6 +75,19 @@ apariciones. Para ejecutarlo solo necesitas PyTorch instalado y luego lanzar
 python zero_transformer.py
 ```
 
+## Laboratorio Navier–Stokes
+
+El directorio `navier_stokes_lab/` es un laboratorio 2D de Navier–Stokes
+incompresible (solver espectral + Taylor–Green) con un esqueleto Lean 4 del
+enunciado de Clay y del proyector de Leray.
+
+```bash
+python navier_stokes_explorer.py --steps 40
+python -m navier_stokes_lab.test_lab
+```
+
+Detalles: [`navier_stokes_lab/README.md`](navier_stokes_lab/README.md).
+
 ## Responsible Use
 
 Llama models are a new technology that carries potential risks with use. Testing conducted to date has not — and could not — cover all scenarios.
