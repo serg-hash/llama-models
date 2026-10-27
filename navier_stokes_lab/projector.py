@@ -33,6 +33,19 @@ def wavenumber_mesh(n_grid: int) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     return kx2, ky2, ksq
 
 
+def mean_square_gradient(u: np.ndarray, v: np.ndarray) -> float:
+    """Mean of |∇u|² from spectral derivatives on the torus [0, 2π)²."""
+    n_grid = u.shape[0]
+    kx, ky, _ = wavenumber_mesh(n_grid)
+    u_hat = np.fft.fft2(u)
+    v_hat = np.fft.fft2(v)
+    ux = np.fft.ifft2(1j * kx * u_hat).real
+    uy = np.fft.ifft2(1j * ky * u_hat).real
+    vx = np.fft.ifft2(1j * kx * v_hat).real
+    vy = np.fft.ifft2(1j * ky * v_hat).real
+    return float(np.mean(ux * ux + uy * uy + vx * vx + vy * vy))
+
+
 def leray_numerator(kx: int, ky: int, ux: int, uy: int) -> tuple[int, int]:
     """Numerador entero |k|² u − k (k · u). Ver `lean/NavierStokesLab/Leray.lean`."""
     ksq = kx * kx + ky * ky
