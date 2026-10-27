@@ -1,0 +1,6 @@
+name = "NavierStokesLab"
+version = "0.1.0"
+defaultTargets = ["NavierStokesLab"]
+
+[[lean_lib]]
+name = "NavierStokesLab"
